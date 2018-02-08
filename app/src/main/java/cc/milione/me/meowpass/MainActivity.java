@@ -1,11 +1,14 @@
 package cc.milione.me.meowpass;
 
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.view.View;
-import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
+
+import java.security.NoSuchAlgorithmException;
+
+import static cc.milione.me.meowpass.MeowTools.*;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -23,7 +26,9 @@ public class MainActivity extends AppCompatActivity {
         findViewById(R.id.buttonGen).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(MainActivity.this, "Meow!", Toast.LENGTH_SHORT).show();
+                String uPassCrypto = "";
+                uPassCrypto = ToMD5("test");
+                Toast.makeText(MainActivity.this, uPassCrypto, Toast.LENGTH_SHORT).show();
             }
         });
     }
